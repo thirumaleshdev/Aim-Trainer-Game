@@ -1,80 +1,71 @@
-# KeyGuardian-Encrypted-Password-Manager
-Here's a README.md file content for your password manager project:
 
-# Password Manager
+# TargetFury-Aim_Trainer_Game-
 
-This is a simple password manager built with Python using the `cryptography` library. It allows you to securely store and view passwords for various accounts. The passwords are encrypted using the `Fernet` symmetric encryption scheme to ensure they remain private.
+Aim Trainer is a simple game built with Python and Pygame to help players improve their mouse precision and reaction time. The goal of the game is to click on red targets that appear randomly on the screen. Each target grows and shrinks, and you need to click on it before it disappears. The game tracks your hits, misses, and overall speed.
 
 ## Features
 
-- **Encryption**: Passwords are encrypted before being stored in a file.
-- **Password Viewing**: View saved passwords with decryption, ensuring security.
-- **Password Adding**: Add new passwords securely to the password file.
-- **Simple CLI**: Use the command line interface to interact with the password manager.
+- **Growing Targets**: Red targets that increase and decrease in size.
+- **Time Tracking**: Displays elapsed time and target shooting speed.
+- **Lives System**: You have a limited number of lives, and each missed target reduces them.
+- **Statistics**: Shows your performance with stats such as hits, speed, and accuracy.
+- **End Screen**: Displays a summary of your performance when the game ends.
 
 ## Installation
 
+To play the game, follow these steps:
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/password-manager.git
-
+   git clone https://github.com/yourusername/aim-trainer.git
 2.Navigate into the project folder:
-cd password-manager
-
+ cd aim-trainer
+ 
 3.Install the required dependencies:
-pip install cryptography
+pip install pygame
 
 Usage
-First Time Setup
-Before using the password manager for the first time, generate a key to encrypt and decrypt your passwords. To do this, uncomment and run the write_key() function (you can comment it back afterward):
-# Uncomment this to generate the encryption key for the first time
-# write_key()
-This will create a file called key.key, which will be used for encrypting and decrypting passwords.
+Once the dependencies are installed, run the game by executing the following:
+python aim_trainer.py
 
-Running the Password Manager
-Run the password manager by executing the following command:
-python password_manager.py
+The game window will open. You can click on the targets to score points. The game ends when you run out of lives.
 
-You will be presented with a simple text-based interface to choose between two options:
+Controls
+Mouse: Click on the targets to score points.
+Keyboard: Press any key or close the window to end the game and view the final score.
 
-Add: Add a new password to the list.
-View: View existing passwords.
-Quit: Exit the application.
+Gameplay
+Targets: Red circles appear on the screen at random locations. The circles grow and shrink.
+Objective: Click on the targets to score points. Each target that is clicked counts as a "hit."
+Lives: You start with 3 lives. If a target disappears without being clicked, you lose a life.
+End Game: The game ends when you lose all your lives, and the final statistics (speed, hits, accuracy) are displayed.
 
-Adding a Password
-To add a password:
-
-Choose the add option.
-Enter the account name and the password when prompted.
-The password will be encrypted and saved to passwords.txt.
-Viewing Passwords
-To view stored passwords:
-
-Choose the view option.
-All saved account names and their corresponding passwords will be displayed (decrypted).
-Note: Passwords are displayed only if the correct decryption key (key.key) is available.
-
-File Structure
-key.key: Stores the encryption key used to encrypt and decrypt passwords.
-passwords.txt: Contains the encrypted passwords for various accounts.
-
-Security
-The passwords are encrypted using the Fernet symmetric encryption scheme, ensuring that even if someone gains access to the passwords.txt file, they cannot read the passwords without the encryption key (key.key).
-Important: Keep the key.key file safe. If you lose this key, you will not be able to decrypt your passwords.
+Key Variables
+WIDTH: Width of the game window (800 pixels).
+HEIGHT: Height of the game window (600 pixels).
+TARGET_INCREMENT: Time interval (in milliseconds) at which a new target appears (400ms).
+LIVES: Number of lives the player starts with (3 lives).
+BG_COLOR: Background color of the game window (dark blue).
 
 Customization
-You can modify the storage file for passwords (passwords.txt) or encryption key (key.key) by adjusting the corresponding file paths in the script.
+You can modify the following parameters to adjust the difficulty or appearance:
+
+TARGET_INCREMENT: Adjust the speed at which new targets appear.
+TARGET_PADDING: Modify the padding between the targets and the edges of the window.
+MAX_SIZE: Change the maximum size of the targets.
+GROWTH_RATE: Adjust the rate at which targets grow or shrink.
 
 Technologies Used
 Python 3.x
-Cryptography (Fernet encryption scheme)
+Pygame (for graphical display and event handling)
 
 Contributing
-If you would like to contribute to the project, feel free to fork the repository and submit a pull request with your changes. You can also open an issue if you find any bugs or have suggestions for improvement.
+If you'd like to contribute to the project, feel free to fork the repository and submit a pull request with your changes. You can also open an issue to suggest new features or improvements.
 
 Acknowledgements
-cryptography library for providing the encryption mechanism.
+Pygame for the graphical and event-handling library.
+Inspiration from various aiming and reaction time games.
 
-Stay secure! 🔒
+Happy training! 🏆
 
-This `README.md` provides a detailed overview of how to set up, use, and customize your password manager, along with installation instructions, security details, and an explanation of how the password manager works.
+This `README.md` file provides a brief overview of the game, instructions for installing and running the game, as well as details about the gameplay mechanics, variables, and technologies used. Feel free to customize any part of it to better fit your project!
